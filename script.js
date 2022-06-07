@@ -1,4 +1,4 @@
-function createElement(element, props) {
+const createElement = (element, props) => {
   const el = document.createElement(element);
   el.className = props.className;
   if (props.innerText) {
