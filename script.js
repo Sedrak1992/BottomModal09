@@ -41,7 +41,7 @@ function btss(props) {
 }
 const divBox = btss({
   className: "model addd",
-  container: document.body,
+  container: document.body
 });
 
 function btss1(props) {
