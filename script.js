@@ -1,152 +1,73 @@
-function h1Title(props) {
-  const h1 = document.createElement("h1");
-  h1.className = props.className;
-  h1.innerText = props.tekst;
-  props.container.append(h1);
-  return h1;
+function createElement(element, props) {
+  const el = document.createElement(element);
+  el.className = props.className;
+  if (props.innerText) {
+    el.innerText = props.innerText;
+  }
+  return el;
 }
-const title = h1Title({
-  tekst: "Bottom Modal",
-  container: document.body,
-});
 
-function add(props) {
-  const buttonAdd = document.createElement("button");
-  buttonAdd.className = props.className;
-  buttonAdd.innerText = props.addBtn;
-  props.container.append(buttonAdd);
-  return buttonAdd;
-}
-const opnBtn = add({
+const title = createElement("h1", { innerText: "Bottom Modal" });
+document.body.append(title);
+
+const opnBtn = createElement("button", {
   className: "a",
-  addBtn: "Open model",
-  container: document.body,
+  innerText: "Open model",
 });
+document.body.append(opnBtn);
 
-function backgroundDiv(props) {
-  const backgroundDivBox = document.createElement("div");
-  backgroundDivBox.className = props.className;
-  props.container.append(backgroundDivBox);
-  return backgroundDivBox;
-}
-const transparency = backgroundDiv({
-  container: document.body,
-});
+const transparency = createElement("div", {});
+document.body.append(transparency);
 
-function btss(props) {
-  const div = document.createElement("div");
-  div.className = props.className;
-  props.container.appendChild(div);
-  return div;
-}
-const divBox = btss({
-  className: "model addd",
-  container: document.body
-});
+const divBox = createElement("div", { className: "model addd" });
+document.body.append(divBox);
 
-function btss1(props) {
-  const div = document.createElement("div");
-  div.className = props.className;
-  props.container.appendChild(div);
-  return div;
-}
-const divBox1 = btss({
-  className: "model1",
-  container: divBox,
-});
+const divBox1 = createElement("div", { className: "model1" });
+divBox.appendChild(divBox1);
 
-function btss2(props) {
-  const div = document.createElement("div");
-  div.className = props.className;
-  props.container.appendChild(div);
-  return div;
-}
-const divBox2 = btss2({
-  className: "model2",
-  container: divBox,
-});
+const divBox2 = createElement("div", { className: "model2" });
+divBox.appendChild(divBox2);
 
-function h2Title(props) {
-  const h2 = document.createElement("h2");
-  h2.className = props.className;
-  h2.innerText = props.tekst;
-  props.container.appendChild(h2);
-  return h2;
-}
-const title2 = h2Title({
+const title2 = createElement("h2", {
   className: "h2vernagir",
-  tekst: "Modal Header",
-  container: divBox1,
+  innerText: "Modal Header",
 });
-function cretOpnBtn(props) {
-  const button = document.createElement("button");
-  button.className = props.className;
-  button.innerText = props.tox;
-  props.container.appendChild(button);
-  return button;
-}
-const closBtn = cretOpnBtn({
+divBox1.appendChild(title2);
+
+const closBtn = createElement("button", {
   className: "clozbtn",
-  tox: " X ",
-  container: divBox1,
+  innerText: "X",
 });
+divBox1.appendChild(closBtn);
 
-function paragraf(props) {
-  const p = document.createElement("p");
-  p.innerText = props.tekst;
-  p.className = props.className;
-  props.container.appendChild(p);
-  return p;
-}
-const title3 = paragraf({
+const title3 = createElement("p", {
   className: "aa",
-  tekst: "Some text in the Modal Body",
-  container: divBox2,
+  innerText: "Some text in the Modal Body",
 });
+divBox2.appendChild(title3);
 
-function paragraf(props) {
-  const p = document.createElement("p");
-  p.className = props.className;
-  p.innerText = props.tekst;
-  props.container.appendChild(p);
-  return p;
-}
-const title4 = paragraf({
+const title4 = createElement("p", {
   className: "ssd",
-  tekst: "Some other text...",
-  container: divBox2,
+  innerText: "Some other text...",
 });
-function futer(props) {
-  const div = document.createElement("div");
-  div.className = props.className;
-  props.container.appendChild(div);
-  return div;
-}
-const modalFutem = futer({
-  className: "futer",
-  container: divBox,
-});
+divBox2.appendChild(title4);
 
-function futers(props) {
-  const h2 = document.createElement("h2");
-  h2.className = props.className;
-  h2.innerText = props.tekst;
-  props.container.appendChild(h2);
-  return h2;
-}
-const futerText = futers({
+const modalFutem = createElement("div", { className: "futer" });
+divBox.appendChild(modalFutem);
+
+const futerText = createElement("h2", {
   className: "h2vernagir",
-  tekst: "Modal Futter",
-  container: modalFutem,
+  innerText: "Modal Futter",
 });
+modalFutem.appendChild(futerText);
 
 const toggleModal = () => {
   divBox.classList.toggle("addd");
   transparency.classList.toggle("transparencyBody");
   opnBtn.classList.toggle("transparencyBodyBtn");
 };
-transparency.onclick = toggleModal
-  
+transparency.onclick = toggleModal;
+
 closBtn.onclick = toggleModal;
 
 opnBtn.onclick = toggleModal;
