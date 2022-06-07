@@ -9,9 +9,11 @@ body {
 }
 .transparencyBodyBtn {
   background: rgba(194, 185, 185, 0.8);
+  transition:  background   0.8s ease-in;
 }
 .transparencyBody {
   background: rgba(194, 185, 185, 0.8);
+  transition:  background  0.8s ease-in;
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -23,8 +25,8 @@ body {
   position: absolute;
   bottom: 0;
   z-index: 1;
-  height:259px;
-  transition: height 0.4s ease-in;
+  height:266px;
+  transition: height 0.8s ease-in;
 }
 .model1 {
   width: 100%;

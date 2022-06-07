@@ -23,18 +23,15 @@ const opnBtn = add({
   container: document.body,
 });
 
-function  backgroundDiv(props){
-  const backgroundDivBox  = document.createElement("div");
+function backgroundDiv(props) {
+  const backgroundDivBox = document.createElement("div");
   backgroundDivBox.className = props.className;
-  props.container.append(backgroundDivBox)
+  props.container.append(backgroundDivBox);
   return backgroundDivBox;
-} 
+}
 const transparency = backgroundDiv({
-    className: "",
-    container: document.body
- })
-
-
+  container: document.body,
+});
 
 function btss(props) {
   const div = document.createElement("div");
@@ -44,9 +41,8 @@ function btss(props) {
 }
 const divBox = btss({
   className: "model addd",
-  container: document.body
+  container: document.body,
 });
-
 
 function btss1(props) {
   const div = document.createElement("div");
@@ -144,15 +140,13 @@ const futerText = futers({
   container: modalFutem,
 });
 
-closBtn.onclick = function () {
+const toggleModal = () => {
   divBox.classList.toggle("addd");
   transparency.classList.toggle("transparencyBody");
   opnBtn.classList.toggle("transparencyBodyBtn");
-
+};
+transparency.onclick = toggleModal
   
-};
-opnBtn.onclick = function () {
-  divBox.classList.toggle("addd");
-  transparency.classList.toggle("transparencyBody");
-  opnBtn.classList.toggle("transparencyBodyBtn");
-};
+closBtn.onclick = toggleModal;
+
+opnBtn.onclick = toggleModal;
